@@ -38,6 +38,13 @@
       <artifactId>selenium-java</artifactId>
       <version>3.141.59</version>
     </dependency>
+    
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>3.0.2</version>
+    </dependency>
+
 
   </dependencies>
 
@@ -63,7 +70,16 @@
           <version>2.22.1</version>
         </plugin>
         <plugin>
+		  <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
+          <configuration>
+			  <archive>
+				  <manifest>
+					  <addClasspath>true</addClasspath>
+					  <mainClass>com.pavan.Selenium_Insure_me.App</mainClass>
+				  </manifest>
+			  </archive>
+		  </configuration>
           <version>3.0.2</version>
         </plugin>
         <plugin>

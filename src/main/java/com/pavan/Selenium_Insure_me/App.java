@@ -37,7 +37,7 @@ public class App
         
         System.out.println("Opening Insure-Me Browser");
         driver.get("http://43.204.220.96:8090/contact.html");
-        Thread.sleep(2000);
+        Thread.sleep(15000);
         
         System.out.println("Hitting Contact-US button");
         //driver.findElement(By.className("nav-link")).click();
@@ -45,7 +45,7 @@ public class App
         
         System.out.println("Entering Name");
         driver.findElement(By.id("inputName")).sendKeys("pavan kasiboina");
-        Thread.sleep(1500);
+        Thread.sleep(1000);
         
         System.out.println("Entering Mobile Number");
         driver.findElement(By.id("inputNumber")).sendKeys("7896834783");
@@ -68,6 +68,7 @@ public class App
         File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
         File destFile = new File("E:\\selenium-scrshot\\test-report.jpg");
         FileUtils.copyFile(srcFile, destFile);
+        System.out.println("screen shot taken and stored");
         Thread.sleep(1000);
         
         driver.quit();
