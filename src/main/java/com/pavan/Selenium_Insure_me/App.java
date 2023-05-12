@@ -1,6 +1,12 @@
 package com.pavan.Selenium_Insure_me;
 
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -13,7 +19,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  */
 public class App 
 {
-    public static void main( String[] args ) throws InterruptedException 
+    public static void main( String[] args ) throws InterruptedException, IOException 
     {
     	//System.setProperty("webdriver.chrome.driver","E:\\LatestChromeDriver");
     	
@@ -25,11 +31,11 @@ public class App
         
         
         System.out.println("Opening Insure-Me Browser");
-        driver.get("http://13.232.238.53:8090/");
+        driver.get("http://43.204.220.96:8090/contact.html");
         Thread.sleep(2000);
         
         System.out.println("Hitting Contact-US button");
-        driver.findElement(By.className("nav-link")).click();
+        //driver.findElement(By.className("nav-link")).click();
         Thread.sleep(2000);
         
         System.out.println("Entering Name");
@@ -52,6 +58,12 @@ public class App
         driver.findElement(By.id("my-button")).click();
         Thread.sleep(1000);
         Thread.sleep(5000);
+        
+        TakesScreenshot scrShot = ((TakesScreenshot)driver);
+        File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
+        File destFile = new File("E:\\selenium-scrshot\\test-report.jpg");
+        FileUtils.copyFile(srcFile, destFile);
+        Thread.sleep(1000);
         
         driver.quit();
         System.out.println("Scripts executed successfully");
