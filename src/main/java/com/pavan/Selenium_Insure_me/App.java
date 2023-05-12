@@ -25,6 +25,11 @@ public class App
     	
     	WebDriverManager.chromedriver().setup();
 		ChromeOptions chromeOptions = new ChromeOptions();
+		
+		//To the scripts without opening GUI and need to process at bg use --headless
+		chromeOptions.addArguments("--headless");
+		chromeOptions.addArguments("--disable-dev-shm-usage");
+		chromeOptions.addArguments("--remote-allow-origins=*");
     	WebDriver driver = new ChromeDriver(chromeOptions);
     	
         System.out.println( "Selenium test scripts executed started ...." );
