@@ -63,11 +63,7 @@ public class App
         Thread.sleep(1000);
         Thread.sleep(5000);
         
-        TakesScreenshot scrShot = ((TakesScreenshot)driver);
-        File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
-
-        File destFile = new File("//tmp//test-report.jpg");
-        FileUtils.copyFile(srcFile, destFile);
+        
         System.out.println("screen shot taken and stored");
         Thread.sleep(1000);
         
