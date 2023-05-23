@@ -36,7 +36,7 @@ public class App
         
         
         System.out.println("Opening Insure-Me Browser");
-        driver.get("http://13.127.165.22:9001/contact.html");
+        driver.get("http://13.127.165.22:9001/");
         Thread.sleep(15000);
         
         System.out.println("Hitting Contact-US button");
@@ -66,7 +66,6 @@ public class App
         
         TakesScreenshot scrShot = ((TakesScreenshot)driver);
         File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
-
         File destFile = new File("//tmp//test-report.jpg");
         FileUtils.copyFile(srcFile, destFile);
         System.out.println("screen shot taken and stored");
