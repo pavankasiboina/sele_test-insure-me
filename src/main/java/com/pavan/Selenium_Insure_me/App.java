@@ -56,12 +56,12 @@ public class App
         
         System.out.println("Entering Message");
         driver.findElement(By.id("inputMessage")).sendKeys("I need more information regarding this policy");
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         
         System.out.println("Hitting Send Button");
         driver.findElement(By.id("my-button")).click();
         Thread.sleep(1000);
-        Thread.sleep(5000);
+       
         
         
         System.out.println("screen shot taken and stored");
