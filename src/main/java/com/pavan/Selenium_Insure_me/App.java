@@ -59,6 +59,8 @@ public class App
         Thread.sleep(2000);
         
         System.out.println("Hitting Send Button");
+        driver.findElement(By.id("my-button")).click();
+        Thread.sleep(2000);
         
        
         
