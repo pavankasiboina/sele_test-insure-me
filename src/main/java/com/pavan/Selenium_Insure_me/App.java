@@ -36,7 +36,7 @@ public class App
         
         
         System.out.println("Opening Insure-Me Browser");
-        driver.get("http://43.204.220.96:8090/contact.html");
+        driver.get("http://13.127.165.22:9001/");
         Thread.sleep(15000);
         
         System.out.println("Hitting Contact-US button");
